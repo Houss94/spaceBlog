@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles!{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="header-image">
+        <img src="{{ asset('assets/img/hero.png') }}" alt="découvrez l'espace !" width="960PX">
+    </div>
+    <div class="title">
+        <h1 class="article-title">
+            Nos articles
+        </h1>
+    </div>
+
+
+    <div class="container">
+
+            <div class="grid">
+                 {% for article in articles  %}
+
+                <a href="{{ path('app_article_show',{id:article.id,slug:article.slug}) }}">
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="{{ asset(vich_uploader_asset(article,'imageFile')) }}" alt="rover" />
+                        </div>
+                        <div class="card-body">
+                            <h3>
+                                {{ article.title |capitalize }}
+                            </h3>
+
+                        </div>
+                    </div>
+                </a>
+
+                 {% endfor %}
+
+            </div>
+    </div>
+
+
+{% endblock %}
+
+
+
+
