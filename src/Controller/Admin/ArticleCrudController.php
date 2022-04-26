@@ -22,7 +22,7 @@ class ArticleCrudController extends AbstractCrudController
     {
         return [
             TextField::new('title'),
-            TextEditorField::new('content'),
+            TextareaField::new('content'),
             TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
             ImageField::new('image')
                 ->setBasePath('article/images')
