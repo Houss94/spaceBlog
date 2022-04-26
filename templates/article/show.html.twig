@@ -9,7 +9,7 @@
     <div class="container">
 
         <div class="card-show">
-            <img src="{{ asset(vich_uploader_asset(article,'imageFile')) }}" alt="Avatar" style="width:100%">
+            <img src="{{ asset(vich_uploader_asset(article,'imageFile')) }}" alt="{{ article.title }}" style="width:100%">
             <div class="card-body-show">
                 <h1>{{ article.title |capitalize }}</h1>
                 <p>
